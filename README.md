@@ -12,7 +12,7 @@ That means your Markdown files automatically become both interactive online and 
 
 [Preview a marksite&emsp;›](https://thorlindberg.github.io/marksite/template)
 
-[Download the template&emsp;›](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/thorlindberg/marksite/template)
+[Download the template&emsp;›](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/thorlindberg/marksite/tree/main/template)
 
 <br>
 
