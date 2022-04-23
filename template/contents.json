@@ -1,0 +1,20 @@
+{
+    "theme": "#E6E6FA",
+    "highlight": "#5D3FD3",
+    "icon": "",
+    "font": "Arial",
+    "download": "Download page as PDF",
+    "title": "Marksite.js",
+    "author": "© Thor Lindberg, 2022",
+    "links": {
+        "Get template": "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/thorlindberg/thorlindberg/tree/main/marksite/template",
+        "Source code": "https://github.com/thorlindberg/thorlindberg/tree/main/marksite"
+    },
+    "pages": {
+        "Welcome": "welcome",
+        "Getting started": "getting-started",
+        "Formatting": "formatting",
+        "Examples": "examples",
+        "Contact": "contact"
+    }
+}
