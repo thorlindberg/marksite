@@ -7,8 +7,8 @@
     "title": "Marksite.js",
     "author": "© Thor Lindberg, 2022",
     "links": {
-        "Get template": "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/thorlindberg/thorlindberg/tree/main/marksite/template",
-        "Source code": "https://github.com/thorlindberg/thorlindberg/tree/main/marksite"
+        "Get template": "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/thorlindberg/marksite/tree/main/template",
+        "Source code": "https://github.com/thorlindberg/marksite"
     },
     "pages": {
         "Welcome": "welcome",
