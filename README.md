@@ -10,9 +10,9 @@ That means your Markdown files automatically become both interactive online and 
 
 <br>
 
-[Preview a marksite&emsp;›](https://thorlindberg.com/marksite/template)
+[Preview a marksite&emsp;›](https://thorlindberg.github.io/marksite/template)
 
-[Download the template&emsp;›](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/thorlindberg/thorlindberg/tree/main/marksite/template)
+[Download the template&emsp;›](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/thorlindberg/marksite/template)
 
 <br>
 
