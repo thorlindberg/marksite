@@ -211,7 +211,7 @@ function marksite(page) {
                 var markdown = document.createElement("div")
                 markdown.classList.value = "pe-lg-5"
                 markdown.style.width = "100%"
-                markdown.innerHTML = marked.parse("## 404 not found")
+                markdown.innerHTML = marked.parse(contents.notfound)
 
                 var table = document.createElement("div")
                 table.id = "marksite-table"
@@ -285,7 +285,7 @@ function marksite(page) {
 
                 markdownContainer.append(markdown)
                 content.append(markdownContainer)
-                if (markdown.innerHTML != marked.parse("## 404 not found")) {
+                if (markdown.innerHTML != marked.parse(contents.notfound)) {
                     content.append(table)
                 }
 
