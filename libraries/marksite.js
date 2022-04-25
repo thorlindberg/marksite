@@ -207,10 +207,10 @@ function marksite(page) {
 
                 var markdownContainer = document.createElement("div")
                 markdownContainer.classList.value = "pe-lg-5 py-4"
+                markdownContainer.style.width = "100%"
 
                 var markdown = document.createElement("div")
                 markdown.classList.value = "pe-lg-5"
-                markdown.style.width = "100%"
                 markdown.innerHTML = marked.parse(contents.notfound)
 
                 var table = document.createElement("div")

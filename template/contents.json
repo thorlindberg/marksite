@@ -3,7 +3,7 @@
     "highlight": "#5D3FD3",
     "icon": "",
     "font": "Arial",
-    "notfound": "Page was not found",
+    "notfound": "## Page was not found",
     "download": "Download page as PDF",
     "title": "Marksite.js",
     "author": "© Thor Lindberg, 2022",
