@@ -136,12 +136,12 @@ function marksite(page) {
                 menuContainer.append(menuContainerTitle)
 
                 var menuLinks = document.createElement("div")
-                menuLinks.classList.value = "navbar-nav gap-3"
+                menuLinks.classList.value = "navbar-nav gap-4"
                 menuLinks.style.marginLeft = "auto";
 
                 Object.entries(contents.links).forEach(n => {
                     var link = document.createElement("a")
-                    link.classList.value = "nav-item nav-link"
+                    link.classList.value = "nav-item nav-link pe-0"
                     link.style.color = contents.highlight
                     link.style.opacity = 3/4
                     link.setAttribute("onmouseover", "this.style.opacity = 1")
