@@ -285,7 +285,9 @@ function marksite(page) {
 
                 markdownContainer.append(markdown)
                 content.append(markdownContainer)
-                content.append(table)
+                if (markdown.innerHTML != marked.parse("## 404 not found")) {
+                    content.append(table)
+                }
 
                 // footer
 
