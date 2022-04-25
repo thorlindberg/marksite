@@ -80,7 +80,6 @@ function marksite(page) {
                     link.style.borderBottom = `1px solid ${contents.theme}`
                     link.style.color = contents.highlight
                     link.style.cursor = "pointer"
-                    link.setAttribute("target", "_blank")
                     link.setAttribute("href", n[1])
                     
                     var linkText = document.createElement("div")
@@ -147,7 +146,6 @@ function marksite(page) {
                     link.style.opacity = 3/4
                     link.setAttribute("onmouseover", "this.style.opacity = 1")
                     link.setAttribute("onmouseout", "this.style.opacity = 3/4")
-                    link.setAttribute("target", "_blank")
                     link.setAttribute("href", n[1])
                     link.innerHTML = `${n[0]}&ensp;<svg width="12" height="12" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Regular-S"><path id="Path" fill="${contents.highlight}" stroke="none" d="M 57.290405 42.759766 L 57.241577 4.673828 C 57.241577 3.43689 56.859131 2.419556 56.094116 1.62207 C 55.329102 0.824585 54.295654 0.425781 52.99353 0.425781 L 14.907593 0.425781 C 13.670654 0.425781 12.677734 0.824585 11.929077 1.62207 C 11.18042 2.419556 10.80603 3.355469 10.80603 4.429688 C 10.80603 5.471313 11.204834 6.382813 12.002319 7.164063 C 12.799805 7.945313 13.719482 8.335938 14.761108 8.335938 L 26.040405 8.335938 L 45.376343 7.652344 L 38.003296 13.951172 L 1.626343 50.425781 C 0.8125 51.207031 0.40564 52.11853 0.40564 53.160156 C 0.40564 54.234375 0.820679 55.194702 1.650757 56.041016 C 2.480835 56.887329 3.432983 57.310547 4.507202 57.310547 C 5.581421 57.310547 6.509155 56.919922 7.290405 56.138672 L 43.716187 19.664063 L 50.112671 12.291016 L 49.282593 31.480469 L 49.282593 42.955078 C 49.282593 43.996704 49.681396 44.924438 50.478882 45.738281 C 51.276367 46.552124 52.21228 46.958984 53.286499 46.958984 C 54.328125 46.958984 55.255859 46.560181 56.069702 45.762695 C 56.883545 44.96521 57.290405 43.964233 57.290405 42.759766 Z"/></g></svg>`
                     menuLinks.append(link)
@@ -310,7 +308,6 @@ function marksite(page) {
                 footerLink.style.opacity = 3/4
                 footerLink.setAttribute("onmouseover", "this.style.opacity = 1")
                 footerLink.setAttribute("onmouseout", "this.style.opacity = 3/4")
-                footerLink.setAttribute("target", "_blank")
                 footerLink.setAttribute("href", "https://thorlindberg.com/marksite")
                 footerLink.innerHTML = `Generated with marksite.js&ensp;<svg width="12" height="12" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Regular-S"><path id="Path" fill="${contents.highlight}" stroke="none" d="M 57.290405 42.759766 L 57.241577 4.673828 C 57.241577 3.43689 56.859131 2.419556 56.094116 1.62207 C 55.329102 0.824585 54.295654 0.425781 52.99353 0.425781 L 14.907593 0.425781 C 13.670654 0.425781 12.677734 0.824585 11.929077 1.62207 C 11.18042 2.419556 10.80603 3.355469 10.80603 4.429688 C 10.80603 5.471313 11.204834 6.382813 12.002319 7.164063 C 12.799805 7.945313 13.719482 8.335938 14.761108 8.335938 L 26.040405 8.335938 L 45.376343 7.652344 L 38.003296 13.951172 L 1.626343 50.425781 C 0.8125 51.207031 0.40564 52.11853 0.40564 53.160156 C 0.40564 54.234375 0.820679 55.194702 1.650757 56.041016 C 2.480835 56.887329 3.432983 57.310547 4.507202 57.310547 C 5.581421 57.310547 6.509155 56.919922 7.290405 56.138672 L 43.716187 19.664063 L 50.112671 12.291016 L 49.282593 31.480469 L 49.282593 42.955078 C 49.282593 43.996704 49.681396 44.924438 50.478882 45.738281 C 51.276367 46.552124 52.21228 46.958984 53.286499 46.958984 C 54.328125 46.958984 55.255859 46.560181 56.069702 45.762695 C 56.883545 44.96521 57.290405 43.964233 57.290405 42.759766 Z"/></g></svg>`
                 footerContainer.append(footerLink)
