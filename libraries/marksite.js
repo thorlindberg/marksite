@@ -229,7 +229,6 @@ function marksite(page) {
                             markdown.innerHTML = parsed
 
                             parsed.split("\n").forEach(n => {
-                                console.log(["<h1", "<h2", "<h3", "<h4", "<h5"].filter(s => n.startsWith(s)))
                                 if (["<h1", "<h2", "<h3", "<h4", "<h5"].filter(s => n.startsWith(s)).length) {
                                     
                                     var section = document.createElement("div")
