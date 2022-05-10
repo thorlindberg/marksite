@@ -197,6 +197,7 @@ function marksite(page) {
                 table.id = "marksite-table"
                 table.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start  py-5"
                 table.style.cursor = "pointer"
+                table.style.zIndex = 999
 
                 var rawF = new XMLHttpRequest()
                 rawF.open("GET", `pages/${page}.md`, false)
@@ -241,6 +242,7 @@ function marksite(page) {
                 links.id = "marksite-links"
                 links.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start py-5"
                 links.style.cursor = "pointer"
+                links.style.zIndex = 999
 
                 Object.entries(contents.links).forEach((n, i) => {
 
