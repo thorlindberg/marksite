@@ -195,7 +195,7 @@ function marksite(page) {
 
                 var table = document.createElement("div")
                 table.id = "marksite-table"
-                table.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start  py-5"
+                table.classList.value = "d-lg-block collapse col-3 sticky-top align-self-start  py-5"
                 table.style.cursor = "pointer"
                 table.style.zIndex = 999
 
@@ -240,7 +240,7 @@ function marksite(page) {
 
                 var links = document.createElement("div")
                 links.id = "marksite-links"
-                links.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start py-5"
+                links.classList.value = "d-lg-block collapse col-3 sticky-top align-self-start py-5"
                 links.style.cursor = "pointer"
                 links.style.zIndex = 999
 
