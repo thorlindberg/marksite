@@ -120,7 +120,7 @@ function marksite(page) {
                 mobileDropdownContainer.append(mobileDropdownList)
                 mobileDropdown.append(mobileDropdownContainer)
 
-                // desktop menu : title : links
+                // desktop menu : title
 
                 var menu = document.createElement("nav")
                 menu.classList.value = "navbar navbar-expand-lg d-lg-block collapse"
@@ -135,23 +135,6 @@ function marksite(page) {
                 menuContainerTitle.innerHTML = contents.title
                 menuContainer.append(menuContainerTitle)
 
-                var menuLinks = document.createElement("div")
-                menuLinks.classList.value = "navbar-nav gap-4"
-                menuLinks.style.marginLeft = "auto";
-
-                Object.entries(contents.links).forEach(n => {
-                    var link = document.createElement("a")
-                    link.classList.value = "nav-item nav-link pe-0"
-                    link.style.color = contents.highlight
-                    link.style.opacity = 3/4
-                    link.setAttribute("onmouseover", "this.style.opacity = 1")
-                    link.setAttribute("onmouseout", "this.style.opacity = 3/4")
-                    link.setAttribute("href", n[1])
-                    link.innerHTML = n[0]
-                    menuLinks.append(link)
-                })
-
-                menuContainer.append(menuLinks)
                 menu.append(menuContainer)
 
                 // desktop menu : pages
@@ -199,24 +182,21 @@ function marksite(page) {
                 // content
 
                 var content = document.createElement("div")
-                content.classList.value = "container d-flex py-3 py-lg-5 gap-5"
+                content.classList.value = "container d-flex"
 
-                // content : markdown : table of contents
-
-                var markdownContainer = document.createElement("div")
-                markdownContainer.classList.value = "pe-lg-5 py-4"
-                markdownContainer.style.width = "100%"
+                // content : table of contents : markdown : links
 
                 var markdown = document.createElement("div")
-                markdown.classList.value = "pe-lg-5"
+                markdown.classList.value = "px-5 py-5"
+                markdown.style.width = "100%"
+                markdown.style.borderLeft = `1px solid ${contents.theme}`
+                markdown.style.borderRight = `1px solid ${contents.theme}`
                 markdown.innerHTML = marked.parse(contents.notfound)
 
-                var table = document.createElement("div")
-                table.id = "marksite-table"
-                table.classList.value = "d-lg-block collapse py-4 sticky-top align-self-start"
-                table.style.width = "auto"
-                table.style.cursor = "pointer"
-                table.style.zIndex = 999
+                var toc = document.createElement("div")
+                toc.id = "marksite-toc"
+                toc.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start  py-5"
+                toc.style.cursor = "pointer"
 
                 var rawF = new XMLHttpRequest()
                 rawF.open("GET", `pages/${page}.md`, false)
@@ -228,20 +208,18 @@ function marksite(page) {
                             const parsed = marked.parse(allText)
                             markdown.innerHTML = parsed
 
-                            parsed.split("\n").forEach(n => {
+                            parsed.split("\n").forEach((n, i) => {
                                 if (["<h1", "<h2", "<h3", "<h4", "<h5"].filter(s => n.startsWith(s)).length) {
                                     
                                     var section = document.createElement("div")
-                                    section.style.whiteSpace = "nowrap"
-                                    section.style.overflow = "hidden"
-                                    section.style.textOverflow = "ellipsis"
                                     section.style.color = contents.highlight
-                                    section.style.borderLeft = `3px solid ${contents.theme}`
-                                    section.setAttribute("onmouseover", `this.style.borderLeft = "3px solid ${contents.highlight}"`)
-                                    section.setAttribute("onmouseout", `this.style.borderLeft = "3px solid ${contents.theme}"`)
 
                                     var sectionText = document.createElement("div")
-                                    sectionText.classList.value = "ps-4 pe-0 py-3"
+                                    if (i != 0) {
+                                        sectionText.classList.value = "ps-0 pe-5 py-3"
+                                    } else {
+                                        sectionText.classList.value = "ps-0 pe-5 pb-3"
+                                    }
                                     sectionText.style.opacity = 3/4
                                     sectionText.setAttribute("onmouseover", "this.style.opacity = 1")
                                     sectionText.setAttribute("onmouseout", "this.style.opacity = 3/4")
@@ -249,7 +227,7 @@ function marksite(page) {
                                     sectionText.innerHTML = n.substring(n.indexOf('">') + '">'.length, n.indexOf('</'))
                                     
                                     section.append(sectionText)
-                                    table.append(section)
+                                    toc.append(section)
 
                                 }
                             })
@@ -259,29 +237,54 @@ function marksite(page) {
                 }
                 rawF.send(null)
 
+                var table = document.createElement("div")
+                table.id = "marksite-table"
+                table.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start py-5"
+                table.style.cursor = "pointer"
+
+                Object.entries(contents.links).forEach((n, i) => {
+
+                    var link = document.createElement("a")
+                    link.style.textDecoration = "none"
+                    link.setAttribute("href", n[1])
+
+                    var section = document.createElement("div")
+                    section.style.color = contents.highlight
+
+                    var sectionText = document.createElement("div")
+                    if (i != 0) {
+                        sectionText.classList.value = "ps-5 pe-0 py-3"
+                    } else {
+                        sectionText.classList.value = "ps-5 pe-0 pb-3"
+                    }
+                    sectionText.style.opacity = 3/4
+                    sectionText.setAttribute("onmouseover", "this.style.opacity = 1")
+                    sectionText.setAttribute("onmouseout", "this.style.opacity = 3/4")
+                    sectionText.innerHTML = n[0]
+                    
+                    section.append(sectionText)
+                    link.append(section)
+                    table.append(link)
+
+                })
+
                 var download = document.createElement("div")
-                download.classList.value = "mt-5"
-                download.style.whiteSpace = "nowrap"
-                download.style.overflow = "hidden"
-                download.style.textOverflow = "ellipsis"
                 download.style.color = "#f95448"
-                download.style.borderLeft = "3px solid #fededc"
-                download.setAttribute("onmouseover", "this.style.borderLeft = '3px solid #f95448'")
-                download.setAttribute("onmouseout", "this.style.borderLeft = '3px solid #fededc'")
+                download.setAttribute("onclick", "")
 
                 var downloadText = document.createElement("div")
-                downloadText.classList.value = "ps-4 pe-0 py-3"
+                downloadText.classList.value = "ps-5 pe-0 py-3"
                 downloadText.style.opacity = 3/4
                 downloadText.setAttribute("onmouseover", "this.style.opacity = 1")
                 downloadText.setAttribute("onmouseout", "this.style.opacity = 3/4")
-                downloadText.setAttribute("onclick", "")
                 downloadText.innerHTML = contents.download
                 
+                content.append(toc)
+
                 download.append(downloadText)
                 table.append(download)
 
-                markdownContainer.append(markdown)
-                content.append(markdownContainer)
+                content.append(markdown)
                 if (markdown.innerHTML != marked.parse(contents.notfound)) {
                     content.append(table)
                 }
@@ -328,7 +331,10 @@ function marksite(page) {
                 body.append(content)
                 body.append(footer)
 
-                // sticky table position
+                // sticky toc + table position
+
+                document.getElementById("marksite-toc").style.top = `${document.getElementById("marksite-toc").offsetTop - document.getElementById("marksite-pages").offsetTop}px`
+                window.addEventListener('resize', event => document.getElementById("marksite-toc").style.top = `${document.getElementById("marksite-toc").offsetTop - document.getElementById("marksite-pages").offsetTop}px`);
 
                 document.getElementById("marksite-table").style.top = `${document.getElementById("marksite-table").offsetTop - document.getElementById("marksite-pages").offsetTop}px`
                 window.addEventListener('resize', event => document.getElementById("marksite-table").style.top = `${document.getElementById("marksite-table").offsetTop - document.getElementById("marksite-pages").offsetTop}px`);
