@@ -247,6 +247,7 @@ function marksite(page) {
                 Object.entries(contents.links).forEach((n, i) => {
 
                     var link = document.createElement("a")
+                    link.style.textAlign = "right"
                     link.style.textDecoration = "none"
                     link.setAttribute("href", n[1])
 
@@ -262,7 +263,7 @@ function marksite(page) {
                     sectionText.style.opacity = 3/4
                     sectionText.setAttribute("onmouseover", "this.style.opacity = 1")
                     sectionText.setAttribute("onmouseout", "this.style.opacity = 3/4")
-                    sectionText.innerHTML = n[0]
+                    sectionText.innerHTML = `${n[0]}&emsp;›`
                     
                     section.append(sectionText)
                     link.append(section)
@@ -271,6 +272,7 @@ function marksite(page) {
                 })
 
                 var download = document.createElement("div")
+                download.style.textAlign = "right"
                 download.style.color = "#f95448"
                 download.setAttribute("onclick", "")
 
@@ -279,17 +281,16 @@ function marksite(page) {
                 downloadText.style.opacity = 3/4
                 downloadText.setAttribute("onmouseover", "this.style.opacity = 1")
                 downloadText.setAttribute("onmouseout", "this.style.opacity = 3/4")
-                downloadText.innerHTML = contents.download
-                
-                content.append(table)
+                downloadText.innerHTML = `${contents.download}&emsp;›`
 
                 download.append(downloadText)
                 links.append(download)
-
-                content.append(markdown)
+                
                 if (markdown.innerHTML != marked.parse(contents.notfound)) {
-                    content.append(links)
+                    content.append(table)
                 }
+                content.append(markdown)
+                content.append(links)
 
                 // footer
 
