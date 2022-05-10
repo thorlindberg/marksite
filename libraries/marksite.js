@@ -193,10 +193,10 @@ function marksite(page) {
                 markdown.style.borderRight = `1px solid ${contents.theme}`
                 markdown.innerHTML = marked.parse(contents.notfound)
 
-                var toc = document.createElement("div")
-                toc.id = "marksite-toc"
-                toc.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start  py-5"
-                toc.style.cursor = "pointer"
+                var table = document.createElement("div")
+                table.id = "marksite-table"
+                table.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start  py-5"
+                table.style.cursor = "pointer"
 
                 var rawF = new XMLHttpRequest()
                 rawF.open("GET", `pages/${page}.md`, false)
@@ -227,7 +227,7 @@ function marksite(page) {
                                     sectionText.innerHTML = n.substring(n.indexOf('">') + '">'.length, n.indexOf('</'))
                                     
                                     section.append(sectionText)
-                                    toc.append(section)
+                                    table.append(section)
 
                                 }
                             })
@@ -237,10 +237,10 @@ function marksite(page) {
                 }
                 rawF.send(null)
 
-                var table = document.createElement("div")
-                table.id = "marksite-table"
-                table.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start py-5"
-                table.style.cursor = "pointer"
+                var links = document.createElement("div")
+                links.id = "marksite-links"
+                links.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start py-5"
+                links.style.cursor = "pointer"
 
                 Object.entries(contents.links).forEach((n, i) => {
 
@@ -264,7 +264,7 @@ function marksite(page) {
                     
                     section.append(sectionText)
                     link.append(section)
-                    table.append(link)
+                    links.append(link)
 
                 })
 
@@ -279,14 +279,14 @@ function marksite(page) {
                 downloadText.setAttribute("onmouseout", "this.style.opacity = 3/4")
                 downloadText.innerHTML = contents.download
                 
-                content.append(toc)
+                content.append(table)
 
                 download.append(downloadText)
-                table.append(download)
+                links.append(download)
 
                 content.append(markdown)
                 if (markdown.innerHTML != marked.parse(contents.notfound)) {
-                    content.append(table)
+                    content.append(links)
                 }
 
                 // footer
@@ -331,13 +331,13 @@ function marksite(page) {
                 body.append(content)
                 body.append(footer)
 
-                // sticky toc + table position
-
-                document.getElementById("marksite-toc").style.top = `${document.getElementById("marksite-toc").offsetTop - document.getElementById("marksite-pages").offsetTop}px`
-                window.addEventListener('resize', event => document.getElementById("marksite-toc").style.top = `${document.getElementById("marksite-toc").offsetTop - document.getElementById("marksite-pages").offsetTop}px`);
+                // sticky table + links position
 
                 document.getElementById("marksite-table").style.top = `${document.getElementById("marksite-table").offsetTop - document.getElementById("marksite-pages").offsetTop}px`
                 window.addEventListener('resize', event => document.getElementById("marksite-table").style.top = `${document.getElementById("marksite-table").offsetTop - document.getElementById("marksite-pages").offsetTop}px`);
+
+                document.getElementById("marksite-links").style.top = `${document.getElementById("marksite-links").offsetTop - document.getElementById("marksite-pages").offsetTop}px`
+                window.addEventListener('resize', event => document.getElementById("marksite-links").style.top = `${document.getElementById("marksite-links").offsetTop - document.getElementById("marksite-pages").offsetTop}px`);
 
             }
         }
