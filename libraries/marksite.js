@@ -187,7 +187,7 @@ function marksite(page) {
                 // content : table of contents : markdown : links
 
                 var markdown = document.createElement("div")
-                markdown.classList.value = "px-5 py-5"
+                markdown.classList.value = "px-5 py-5 mx-5"
                 markdown.style.width = "100%"
                 markdown.style.borderLeft = `1px solid ${contents.theme}`
                 markdown.style.borderRight = `1px solid ${contents.theme}`
@@ -195,7 +195,7 @@ function marksite(page) {
 
                 var table = document.createElement("div")
                 table.id = "marksite-table"
-                table.classList.value = "d-lg-block collapse col-3 sticky-top align-self-start  py-5"
+                table.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start py-5"
                 table.style.cursor = "pointer"
                 table.style.zIndex = 999
 
@@ -217,9 +217,9 @@ function marksite(page) {
 
                                     var sectionText = document.createElement("div")
                                     if (i != 0) {
-                                        sectionText.classList.value = "ps-0 pe-5 py-3"
+                                        sectionText.classList.value = "py-3"
                                     } else {
-                                        sectionText.classList.value = "ps-0 pe-5 pb-3"
+                                        sectionText.classList.value = "pb-3"
                                     }
                                     sectionText.style.opacity = 3/4
                                     sectionText.setAttribute("onmouseover", "this.style.opacity = 1")
@@ -240,7 +240,7 @@ function marksite(page) {
 
                 var links = document.createElement("div")
                 links.id = "marksite-links"
-                links.classList.value = "d-lg-block collapse col-3 sticky-top align-self-start py-5"
+                links.classList.value = "d-lg-block collapse col-2 sticky-top align-self-start py-5"
                 links.style.cursor = "pointer"
                 links.style.zIndex = 999
 
@@ -255,9 +255,9 @@ function marksite(page) {
 
                     var sectionText = document.createElement("div")
                     if (i != 0) {
-                        sectionText.classList.value = "ps-5 pe-0 py-3"
+                        sectionText.classList.value = "py-3"
                     } else {
-                        sectionText.classList.value = "ps-5 pe-0 pb-3"
+                        sectionText.classList.value = "pb-3"
                     }
                     sectionText.style.opacity = 3/4
                     sectionText.setAttribute("onmouseover", "this.style.opacity = 1")
@@ -275,7 +275,7 @@ function marksite(page) {
                 download.setAttribute("onclick", "")
 
                 var downloadText = document.createElement("div")
-                downloadText.classList.value = "ps-5 pe-0 py-3"
+                downloadText.classList.value = "py-3"
                 downloadText.style.opacity = 3/4
                 downloadText.setAttribute("onmouseover", "this.style.opacity = 1")
                 downloadText.setAttribute("onmouseout", "this.style.opacity = 3/4")
