@@ -314,7 +314,7 @@ function marksite(page) {
                 footerLink.setAttribute("onmouseover", "this.style.opacity = 1")
                 footerLink.setAttribute("onmouseout", "this.style.opacity = 3/4")
                 footerLink.setAttribute("href", "https://thorlindberg.com/marksite")
-                footerLink.innerHTML = "Generated with marksite.js"
+                footerLink.innerHTML = "Generated with marksite.js&emsp;›"
                 footerContainer.append(footerLink)
 
                 footer.append(footerContainer)
