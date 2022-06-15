@@ -1,0 +1,23 @@
+{
+    "icon": "",
+    "title": "Marksite.js",
+    "pages": {
+        "Page 1": "page1",
+        "Page 2": "page2",
+        "Page 3": "page3",
+        "Page 4": "page4",
+        "Page 5": "page5",
+        "Page 6": "page6"
+    },
+    "links": {
+        "Link1": "https://www.google.com/",
+        "Link2": "https://www.google.com/",
+        "Link3": "https://www.google.com/"
+    },
+    "author": "© Thor Lindberg, 2022",
+    "legal": {
+        "Privacy": "https://www.google.com/",
+        "License": "https://www.google.com/",
+        "Cookies": "https://www.google.com/"
+    }
+}

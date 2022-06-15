@@ -1,9 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Refresh" content="0; url='https://thorlindberg.github.io/marksite/template'" />
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+    <base target="_blank">
+    <link rel="icon" type="image/x-icon">
+    <link href="libraries/bootstrap.min.css" rel="stylesheet">
+    <link href="libraries/marksite.css" rel="stylesheet">
 </head>
+
+<body>
+
+    <!-- container -->
+    <div class="container-fluid p-0 d-flex flex-column">
+
+        <!-- toolbar -->
+        <div class="container-fluid d-flex p-0 sticky-top align-self-start">
+
+            <!-- toggle -->
+            <div id="sidebar" class="sidebar menu d-flex collapse justify-content-between align-items-center px-4 py-3">
+                <div id="toggle" onclick="toggleSidebar()">Toggle</div>
+            </div>
+
+            <!-- header -->
+            <div class="menu header container-fluid d-flex collapse justify-content-between px-4 py-3">
+                <div id="title"></div><div id="links" class="d-lg-flex collapse gap-4"></div>
+            </div>
+
+        </div>
+
+        <!-- page -->
+        <div class="d-flex container-fluid p-0">
+
+            <!-- navigation-->
+            <div id="navigation" class="sidebar container-fluid sticky-top align-self-start d-lg-flex flex-column collapse gap-3 p-4"></div>
+
+            <!-- content -->
+            <div class="d-flex collapse flex-column container-fluid p-0">
+
+                <!-- markdown -->
+                <div id="markdown" class="container-fluid px-4 py-5 col-9 my-5"></div>
+
+                <!-- footer -->
+                <div id="footer" class="container-fluid d-flex justify-content-between px-4 py-3">
+                    <div id="author"></div><div id="legal" class="d-flex gap-4"></div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    <!-- dependencies -->
+    <script src="libraries/bootstrap.bundle.min.js"></script>
+    <script src="libraries/marked.min.js"></script>
+    <script src="libraries/marksite.js"></script>
+
+</body>
+
 </html>
